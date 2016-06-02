@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    url(r'^', TemplateView.as_view(template_name="portfolio_app/index.html"), name="home"),
     url(r'^admin/', admin.site.urls),
-    url(r'^home/', TemplateView.as_view(template_name="portfolio_app/index.html"), name="home"),
 ]
