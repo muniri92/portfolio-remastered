@@ -86,7 +86,9 @@
           <h2>MY <strong>SERVICES</strong></h2>
           <hr>
           <div class="clearfix"></div>
-          <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus. Eleifend pellentesque natoque faucibus magna ut etiam.</p>
+          <p>
+            Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus. Eleifend pellentesque natoque faucibus magna ut etiam. <br> 
+            aaaaa aaaaaa aaaaaa aaaaaa aaaaa a a a a a aaaaaa aa</p>
         </div>
         <div class="space"></div>
         <div class="row">
@@ -249,54 +251,83 @@
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">EDUCATION</h2></div>
           <!-- <div class="space"></div> -->
           <div class="col-md-9 wow fadeInUp">
-              <h4>Code Fellows | January 2016 - May 2016</h4>
-              <p>Certificate, Advanced Software Development in Python</p>
-              <div class="space"></div>
-              <h4>University of Washington | September 2010 - December 2015</h4>
-              <p>Bachelors of Arts in Mathematics <br>
-                 Double Minor in Applied Mathematics and Diversity <br>
-                 Certificate in Quantitative Fundamentals of Computational Finance</p>
-              <!-- <div class="wow"> -->
-              <div class="space"></div>
-              <h4>Technical Skills</h4>
-              <div class="list-style">
-                <div class="row">
-                  <div class="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                      <li>Python 2/3</li>
-                      <li>Django, Pyramid</li>
-                      <li>Javascript, jQuery</li>
-                      <li>HTML(5), CSS(3)</li>
-                      <li>MatLab, R</li>
-                      <li>AWS, Heroku</li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                      <li>Object Oriented Programming</li>
-                      <li>Test Driven Development</li>
-                      <li>RESTful APIs</li>
-                      <li>AGILE / SCRUM</li>
-                      <li>Algorithms / Data Structures</li>
-                    </ul>
-                  </div>
+            <h4>Code Fellows | March 2016 - May 2016</h4>
+            <p>
+              Certificate, Advanced Software Development in Python
+            </p>
+            <div class="space"></div>
+            <h4>University of Washington | September 2010 - December 2015</h4>
+            <p>Bachelors of Arts in Mathematics <br>
+               Double Minor in Applied Mathematics and Diversity <br>
+               Certificate in Quantitative Fundamentals of Computational Finance</p>
+            <!-- <div class="wow"> -->
+            <div class="space"></div>
+            <h4>Technical Skills</h4>
+            <div class="list-style">
+              <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <ul>
+                    <li>Python 2/3</li>
+                    <li>Django, Pyramid</li>
+                    <li>Javascript, jQuery</li>
+                    <li>HTML(5), CSS(3)</li>
+                    <li>MatLab, R</li>
+                    <li>AWS, Heroku</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                  <ul>
+                    <li>Object Oriented Programming</li>
+                    <li>Test Driven Development</li>
+                    <li>RESTful APIs</li>
+                    <li>AGILE / SCRUM</li>
+                    <li>Algorithms / Data Structures</li>
+                  </ul>
                 </div>
               </div>
+            </div>
           </div>
-<!--           <div class="col-md-3 wow fadeInRight"> January 2016 - May 2016 </div>
-          <div class="col-md-3 wow fadeInRight"> September 2010 - December 2015 </div>
- -->        </div>
+<!--      <div class="col-md-3 wow fadeInRight"> January 2016 - May 2016 </div>
+          <div class="col-md-3 wow fadeInRight"> September 2010 - December 2015 </div>-->        
+        </div>
       </div>
     </div>
     <!-- Team Section -->
-    <div id="team-section" class="text-center">
+    <div id="team-section">
       <div class="container">
-        <div class="section-title wow fadeInDown">
+        <div class="section-title text-center wow fadeInDown">
           <h2><strong>EXPERIENCE</strong></h2>
+          <p>Where I've worked.</p>
           <hr>
           <div class="clearfix"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
         </div>
+
+        <div class="row">
+          <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">WORK</h2></div>
+          <!-- <div class="space"></div> -->
+          <div class="col-md-9 wow fadeInUp">
+            <h4>Sternshus | May 2016 - Present</h4>
+            <h5>Software Engineer Intern</h5>
+            <ul>
+              <li>
+                Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
+              </li>
+              <li>
+                Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
+              </li>
+            </ul>
+            <div class="space"></div>
+            <h4>Code Fellows | May 2016 - June 2016</h4>
+            <h5>Teaching Assistant</h5>
+            <ul>
+              <li>
+                I help learn to code. 
+              </li>
+            </ul>
+            <!-- <div class="space"></div> -->
+          </div>
+        </div>
+
         <!-- <div id="row"> -->
           <!-- <div class="col-md-3 col-sm-6 team wow fadeInUp" data-wow-delay="200ms">
             <div class="thumbnail"> <img src="{% static 'img/team/01.jpg' %}" alt="..." class="img-circle team-img">
@@ -403,7 +434,8 @@
           <div class="clearfix"></div>
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="400ms">
-    	<h3>Leave me a message!</h3>
+          <h3>Leave me a message!</h3>
+          {% csrf_token %}
           <form name="sentMessage" id="contactForm" novalidate>
             <div class="row">
               <div class="col-md-6">
