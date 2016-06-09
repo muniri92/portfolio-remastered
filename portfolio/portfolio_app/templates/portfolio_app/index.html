@@ -26,6 +26,7 @@
 
     <!-- Stylesheet
         ================================================== -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/education.css' %}">
     <link rel="stylesheet" type="text/css"  href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
@@ -240,40 +241,51 @@
       <div class="container">
         <div class="section-title text-center wow fadeInDown">
           <h2><strong>CURRICULUM</strong> VITAE</h2>
+          <p>Where was I taught?</pWhere I was taught>
           <hr>
           <div class="clearfix"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
         </div>
-        <!-- <div class="row"> -->
- <!--          <div class="col-md-6 wow fadeInLeft"> <img src="{% static 'img/about.png' %}" class="img-responsive"> </div>
-          <div class="col-md-6 wow fadeInRight">
-              <h4>Who We Are</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
+        <div class="row">
+          <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">EDUCATION</h2></div>
+          <!-- <div class="space"></div> -->
+          <div class="col-md-9 wow fadeInUp">
+              <h4>Code Fellows | January 2016 - May 2016</h4>
+              <p>Certificate, Advanced Software Development in Python</p>
               <div class="space"></div>
-              <h4>What We Do</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-              <div class="space"></div><div class="list-style">
+              <h4>University of Washington | September 2010 - December 2015</h4>
+              <p>Bachelors of Arts in Mathematics <br>
+                 Double Minor in Applied Mathematics and Diversity <br>
+                 Certificate in Quantitative Fundamentals of Computational Finance</p>
+              <!-- <div class="wow"> -->
+              <div class="space"></div>
+              <h4>Technical Skills</h4>
+              <div class="list-style">
                 <div class="row">
                   <div class="col-lg-6 col-sm-6 col-xs-12">
                     <ul>
-                      <li>Lorem ipsum dolor</li>
-                      <li>Consectetur adipiscing</li>
-                      <li>Duis sed dapibus leo</li>
-                      <li>Sed commodo nibh ante</li>
+                      <li>Python 2/3</li>
+                      <li>Django, Pyramid</li>
+                      <li>Javascript, jQuery</li>
+                      <li>HTML(5), CSS(3)</li>
+                      <li>MatLab, R</li>
+                      <li>AWS, Heroku</li>
                     </ul>
                   </div>
                   <div class="col-lg-6 col-sm-6 col-xs-12">
                     <ul>
-                      <li>Lorem ipsum dolor</li>
-                      <li>Consectetur adipiscing</li>
-                      <li>Duis sed dapibus leo</li>
-                      <li>Sed commodo nibh ante</li>
+                      <li>Object Oriented Programming</li>
+                      <li>Test Driven Development</li>
+                      <li>RESTful APIs</li>
+                      <li>AGILE / SCRUM</li>
+                      <li>Algorithms / Data Structures</li>
                     </ul>
                   </div>
                 </div>
               </div>
-          </div> -->
-        <!-- </div> -->
+          </div>
+<!--           <div class="col-md-3 wow fadeInRight"> January 2016 - May 2016 </div>
+          <div class="col-md-3 wow fadeInRight"> September 2010 - December 2015 </div>
+ -->        </div>
       </div>
     </div>
     <!-- Team Section -->
@@ -456,10 +468,9 @@
                 </p>
                 <ul class="list-inline">
                   <li><strong>Link</strong>: <a href="http://successapp.herokuapp.com">SuccessApp</a></li>
+                  <li><strong>Github</strong>: <a href=""></a>Repo</li>
                 </ul>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/equiplogo.png' %}" alt="">
-                <!-- <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p> -->
-                  <!-- <li><strong>Category</strong>: Web Design</li> -->
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/01-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
@@ -480,14 +491,14 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2>Project Title</h2>
-                <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/02-preview.jpg' %}" alt="">
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
+                <h2>Drone Quest</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
+                <p>Drone Quest is an open source python module that allows a user to connect their Parrot AR-Drone and fly it using either our Angular web interface or a Leap Motion Controller. Used a Bottle framework to create an API that allows developers to install our module and control their Drone by hitting the correct API endpoints. As well as continuous integration using Tox, TravisCI and pytest.</p>
                 <ul class="list-inline">
-                  <li><strong>Client</strong>: John Doe</li>
-                  <li><strong>Category</strong>: Web Design</li>
+                  <li><strong>Install Module</strong>: <a href="https://github.com/DroneQuest"> DroneQuest </a></li>
+                  <li><strong>Github</strong> <a href="">Repo</a> </li>
                 </ul>
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/02-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
@@ -508,14 +519,14 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2>Project Title</h2>
-                <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/03-preview.jpg' %}" alt="">
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
+                <h2>Equip</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
+                <p>A web application that helps users create custom packing lists based on selected outdoor activities as well as a journal that allows users to document their trip. Built using vanilla JavaScript, HTML5, and CSS3. Utilized local storage to persistently keep the journal on the users current browser cache.</p>
                 <ul class="list-inline">
-                  <li><strong>Client</strong>: John Doe</li>
-                  <li><strong>Category</strong>: Web Design</li>
+                  <li><strong>Site</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
+                  <li><strong>Github</strong>: <a href="">Repo</a> </li>
                 </ul>
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/03-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
