@@ -18,17 +18,17 @@ class ContactView(View):
             """.format(
                 form.cleaned_data['name'],
                 form.cleaned_data['email'],
-                form.cleaned_data['message']
+                form.cleaned_data['message'],
             )
             connection = mail.get_connection()
             email = mail.EmailMessage(
                 'New form',
                 message,
-                'no-reply@sternshus.com',
-                os.environ.get('BOT_TARGET', "no-reply@sternshus.com").split(),
+                'mibrah04@gmail.com',
+                'mibrah04@gmail.com'.split(),
                 connection=connection
             )
             email.send()
-            return HttpResponse('success|<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert"><i class="ion-ios-close-empty"></i></button>Thank you! We will contact you shortly.</div>')
+            return HttpResponse('success|<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert"><i class="ion-ios-close-empty"></i></button>Thank you! I will contact you shortly.</div>')
         else:
             return HttpResponse('error|<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><i class="ion-ios-close-empty"></i></button>Please fill the all required fields.</div>')

@@ -1,3 +1,7 @@
+.social ul {
+	padding: 0px;
+}
+
 body, html {
 	font-family: 'Lato', sans-serif;
 	text-rendering: optimizeLegibility !important;

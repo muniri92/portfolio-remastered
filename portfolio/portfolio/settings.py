@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# For the static files
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'imagersite', 'static'), ]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -25,7 +27,20 @@ SECRET_KEY = 'pt&y3and$#g9*b2n&ucog_q#n16bm$@gt54s21kuyr#!2mva*0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# To set up email connect from possible employers
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'michaelmunirkyle@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_UN')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+
+
+# For future reference
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['localhost', 'ec2-52-37-133-225.us-west-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -136,3 +151,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
