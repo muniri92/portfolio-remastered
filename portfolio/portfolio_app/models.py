@@ -1,9 +1,7 @@
 # # -*- coding: utf-8 -*-
 """About, Porfolio, Education and Experience Models."""
 from django.db import models
-# from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
-from django.forms import ModelForm
 # Create your models here.
 
 
@@ -35,11 +33,11 @@ class Portfolio(models.Model):
 
 @python_2_unicode_compatible
 class Education(models.Model):
-    """Education."""
+    """Information about my education."""
 
     institution = models.CharField(max_length=100)
     dates = models.CharField(max_length=100)
-    degree = models.CharField(max_length=100)
+    degree = models.CharField(max_length=500)
 
     def __str__(self):
         u"""WTF."""
@@ -47,13 +45,14 @@ class Education(models.Model):
 
 
 @python_2_unicode_compatible
-class Expericence(models.Model):
-    """Experiences."""
+class Experience(models.Model):
+    """Record of all my software experience."""
 
-    title = models.CharField(max_length=100)
-    dates = models.CharField(max_length=100)
+    company = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    dates = models.CharField(max_length=100)
 
     def __str__(self):
         u"""WTF."""
-        return self.title
+        return self.company

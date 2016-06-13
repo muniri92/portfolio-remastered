@@ -44,6 +44,8 @@
     <div id="preloader">
       <div id="status"> <img src="{% static 'img/preloader.gif' %}" height="64" width="64" alt=""> </div>
     </div>
+
+
     <!-- Navigation
         ==========================================-->
     <nav id="menu" class="navbar navbar-default navbar-fixed-top">
@@ -51,7 +53,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-flag-checkered fa-flip-horizontal"></i> Munir Ibrahim<strong></strong></a> </div>
+          <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-code"></i> Munir Ibrahim<strong></strong></a> </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,12 +75,13 @@
     <header class="text-center" name="home">
       <div class="intro-text">
         <h1 class="wow fadeInDown">MUNIR<strong><span class="color">IBRAHIM</span></strong></h1>
-        <p class="wow fadeInDown">Full Stack Software Engineer</p>
+        <p class="wow fadeInDown">Full Stack Software Developer / Software Engineer</p>
         <a href="#works-section" class="btn btn-default btn-lg page-scroll wow fadeInUp" data-wow-delay="200ms">My Portfolio</a>
       </div>
     </header>
 
-    <!-- Services Section -->
+
+    <!-- About Section -->
     <div id="services-section" class="text-center">
       <div class="container">
         <div class="section-title wow fadeInDown">
@@ -86,12 +89,10 @@
           <hr>
           <div class="clearfix"></div>
           <p>
-            Hey, My name is Munir Ibrahim. I’m a recent graduate of the Python 401 course over at Code Fellows. Before pursing a career in software development <br> I was a student at the University of Washington (Go Huskies!), receiving a degree in Mathematics in 2015. During my undergraduate work, I learned to love programming, <br> so made the switch when I finished. I’ve thus spent the last few months of my life growing and maturing into a well-rounded developer. 
-
-            <!-- Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus. Eleifend pellentesque natoque faucibus magna ut etiam. <br> 
-            aaaaa aaaaaa aaaaaa aaaaaa aaaaa a a a a a aaaaaa aa -->
+            Hey, My name is Munir Ibrahim. I’m a recent graduate of the Python 401 course over at Code Fellows. Before pursing a career in software development I was a student at the University of Washington (Go Huskies!), receiving a degree in Mathematics in 2015. During my undergraduate work, I learned to love programming, so made the switch when I finished. I’ve thus spent the last few months of my life growing and maturing into a well-rounded developer. 
           </p>
         </div>
+
         <div class="space"></div>
         <div class="row">
           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
@@ -105,31 +106,24 @@
             <p>
               My passion for programming is deeply rooted in working on the backend of a project; whether it's consuming or creating RESTful API's or constructing a Database from scratch.
             </p>
-            <!-- <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p> -->
           </div>
           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="800ms"> <i class="fa fa-rocket"></i>
             <h4><strong>Data Science</strong></h4>
             <p>
               I enjoys working with the preprocessing and organization of large sets of data in order to find patterns  that help provide meaningful interpretations and reports.
             </p>
-            <!-- <p>
-              I enjoys working with and interpreting large sets of data in order to find the patterns that the data provides as well as organizing and preprocessing the data.
-            </p> -->
-            <!-- <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p> -->
           </div>
           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="600ms"> <i class="fa fa-bullhorn"></i>
             <h4><strong>Responsive Design</strong></h4>
             <p>
               I am experienced and trained in creating web applications that are built with mobile first design in mind. I strive to create sites that are both responsive and user friendly. 
             </p>
-            <!-- <p>
-              I have been trained and experienced in creating applications that begin with a mobile first and responsive design. 
-            </p> -->
-            <!-- <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p> -->
           </div>
         </div>
       </div>
     </div>
+
+
     <!-- Portfolio Section -->
     <div id="works-section" class="text-center">
       <div class="container"> <!-- Container -->
@@ -209,43 +203,12 @@
                   <img src="{% static 'img/portfolio/05.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
               </div>
             </div>
-            <!-- <div class="col-sm-6 col-md-3 col-lg-3 branding">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="1200ms">
-                <div class="hover-bg"> <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Project Title</h4>
-                    Branding
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/06.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div> -->
-<!--             </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="1400ms">
-                <div class="hover-bg"> <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Project Title</h4>
-                    App Development, Branding
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/07.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 web">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="1600ms">
-                <div class="hover-bg"> <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Project Title</h4>
-                    Web Design
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/08.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
     </div>
+
+
     <!-- About Section -->
     <div id="about-section">
       <div class="container">
@@ -299,6 +262,8 @@
         </div>
       </div>
     </div>
+
+
     <!-- Team Section -->
     <div id="team-section">
       <div class="container">
@@ -334,61 +299,6 @@
             <!-- <div class="space"></div> -->
           </div>
         </div>
-
-        <!-- <div id="row"> -->
-          <!-- <div class="col-md-3 col-sm-6 team wow fadeInUp" data-wow-delay="200ms">
-            <div class="thumbnail"> <img src="{% static 'img/team/01.jpg' %}" alt="..." class="img-circle team-img">
-              <div class="caption">
-                <h3>Jessica Wally</h3>
-                <p>CEO / Founder</p>
-                            <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 team wow fadeInUp" data-wow-delay="400ms">
-            <div class="thumbnail"> <img src="{% static 'img/team/02.jpg' %}" alt="..." class="img-circle team-img">
-              <div class="caption">
-                <h3>Mike Sloan</h3>
-                <p>Web Designer</p>
-                            <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 team wow fadeInUp" data-wow-delay="600ms">
-            <div class="thumbnail"> <img src="{% static 'img/team/03.jpg' %}" alt="..." class="img-circle team-img">
-              <div class="caption">
-                <h3>Michele Doe</h3>
-                <p>Web Designer</p>
-                           <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 team wow fadeInUp" data-wow-delay="800ms">
-            <div class="thumbnail"> <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
-              <div class="caption">
-                <h3>Larry Evans</h3>
-                <p>Project Manager</p>
-                            <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div> -->
-        <!-- </div> -->
       </div>
     </div> 
 
@@ -479,8 +389,8 @@
                   A single page web application that utilizes the IndeedJobsAPI and the EventbriteAPI to populate job applications and related corresponding local events that are aligned with the job search. Utilized HandlebarJS for dynamic HTML templating, PagesJS for client-side routing, and Heroku for deployment.
                 </p>
                 <ul class="list-inline">
-                  <li><strong>Link</strong>: <a href="http://successapp.herokuapp.com">SuccessApp</a></li>
-                  <li><strong>Github</strong>: <a href=""></a>Repo</li>
+                  <li><strong>URL</strong>: <a href="http://successapp.herokuapp.com">SuccessApp</a></li>
+                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/successapp"></a>Repo</li>
                 </ul>
                 <img class="img-responsive img-centered" src="{% static 'img/portfolio/01-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
@@ -508,7 +418,7 @@
                 <p>Drone Quest is an open source python module that allows a user to connect their Parrot AR-Drone and fly it using either our Angular web interface or a Leap Motion Controller. Used a Bottle framework to create an API that allows developers to install our module and control their Drone by hitting the correct API endpoints. As well as continuous integration using Tox, TravisCI and pytest.</p>
                 <ul class="list-inline">
                   <li><strong>Install Module</strong>: <a href="https://github.com/DroneQuest"> DroneQuest </a></li>
-                  <li><strong>Github</strong>: <a href="">Repo</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/DroneQuest/drone-quest">Repo</a> </li>
                 </ul>
                 <img class="img-responsive img-centered" src="{% static 'img/portfolio/02-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
@@ -535,8 +445,8 @@
                 <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>A web application that helps users create custom packing lists based on selected outdoor activities as well as a journal that allows users to document their trip. Built using vanilla JavaScript, HTML5, and CSS3. Utilized local storage to persistently keep the journal on the users current browser cache.</p>
                 <ul class="list-inline">
-                  <li><strong>Site</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
-                  <li><strong>Github</strong>: <a href="">Repo</a> </li>
+                  <li><strong>URL</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/equip">Repo</a> </li>
                 </ul>
                 <img class="img-responsive img-centered" src="{% static 'img/portfolio/03-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
@@ -563,8 +473,8 @@
                 <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>Application that allows the user to navigate along the paths of the Mars rovers, while switching between each rover's multiple cameras. Developed a Postgres database on a Pyramid Framework, using the NASA Mars API to stores hundreds of thousands of photos and information about each photo respectively. Connected the database to front-end interface using JavaScript and jQuery. Successfully implemented pytest for both unit and functional testing as well as Tox to write code that was both Python 2 / Python 3 compatible.</p>
                 <ul class="list-inline">
-                  <li><strong>Site</strong>: <a href="">Mars-Street-View</a> </li>
-                  <li><strong>Github</strong>: <a href="">Repo</a> </li>
+                  <li><strong>URL</strong>: <a href="http://mars-street-view.herokuapp.com">Mars-Street-View</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/mars-street-view/mars-street-view">Repo</a> </li>
                 </ul>
                 <img class="img-responsive img-centered" src="{% static 'img/portfolio/04-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
@@ -592,93 +502,9 @@
                 <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
                 <ul class="list-inline">
                   <!-- <li><strong>Client</strong>: John Doe</li> -->
-                  <li><strong>Github</strong>: <a href="">Repo</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/muniri92/portfolio-remastered">Repo</a> </li>
                 </ul>
                 <img class="img-responsive img-centered" src="img/portfolio/05-preview.jpg" alt="">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Project Title</h2>
-                <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-responsive img-centered" src="img/portfolio/06-preview.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
-                <ul class="list-inline">
-                  <li><strong>Client</strong>: John Doe</li>
-                  <li><strong>Category</strong>: Web Design</li>
-                </ul>
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 7 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Project Title</h2>
-                <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-responsive img-centered" src="img/portfolio/07-preview.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
-                <ul class="list-inline">
-                  <li><strong>Client</strong>: John Doe</li>
-                  <li><strong>Category</strong>: Web Design</li>
-                </ul>
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 8 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Project Title</h2>
-                <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-responsive img-centered" src="img/portfolio/08-preview.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
-                <ul class="list-inline">
-                  <li><strong>Client</strong>: John Doe</li>
-                  <li><strong>Category</strong>: Web Design</li>
-                </ul>
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
