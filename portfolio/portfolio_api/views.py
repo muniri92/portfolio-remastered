@@ -2,11 +2,12 @@ from django.shortcuts import render
 from rest_framework import generics
 from portfolio_app.models import About, Portfolio, Education, Experience
 from portfolio_api.serializers import AboutSerializer, PortfolioSerializer, EducationSerializer, ExperienceSerializer
-
 # Create your views here.
 
 
 class AboutAPI(generics.ListAPIView):
+	"""About API."""
+
     serializer_class = AboutSerializer
     queryset = About.objects.all()
 
@@ -16,6 +17,8 @@ class AboutAPI(generics.ListAPIView):
 
 
 class PortfolioAPI(generics.ListAPIView):
+	"""Portfolio API."""
+
     serializer_class = PortfolioSerializer
     queryset = Portfolio.objects.all()
 
@@ -25,6 +28,8 @@ class PortfolioAPI(generics.ListAPIView):
 
 
 class EducationAPI(generics.ListAPIView):
+	"""Education API."""
+
     serializer_class = EducationSerializer
     queryset = Education.objects.all()
 
@@ -34,6 +39,8 @@ class EducationAPI(generics.ListAPIView):
 
 
 class ExperienceAPI(generics.ListAPIView):
+	"""Experience API."""
+
     serializer_class = ExperienceSerializer
     queryset = Experience.objects.all()
 
