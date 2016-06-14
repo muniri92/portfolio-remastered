@@ -103,32 +103,6 @@
             </p>
           </div>
         {% endfor %}
-
-
-       <!--    <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
-            <h4><strong>Python Compatibility</strong></h4>
-            <p>
-              I write clean, well-tested, advanced Python code that is compatible in both Python 2 and 3 using industry-standard software engineering patterns.
-            </p>
-          </div> -->
-<!--           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-gears"></i>
-            <h4><strong>Backend Development</strong></h4>
-            <p>
-              My passion for programming is deeply rooted in working on the backend of a project; whether it's consuming or creating RESTful API's or constructing a Database from scratch.
-            </p>
-          </div>
-          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="800ms"> <i class="fa fa-rocket"></i>
-            <h4><strong>Data Science</strong></h4>
-            <p>
-              I enjoys working with the preprocessing and organization of large sets of data in order to find patterns  that help provide meaningful interpretations and reports.
-            </p>
-          </div>
-          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="600ms"> <i class="fa fa-bullhorn"></i>
-            <h4><strong>Responsive Design</strong></h4>
-            <p>
-              I am experienced and trained in creating web applications that are built with mobile first design in mind. I strive to create sites that are both responsive and user friendly. 
-            </p>
-          </div> -->
         </div>
       </div>
     </div>
@@ -231,17 +205,19 @@
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">EDUCATION</h2></div>
           <div class="col-md-9 wow fadeInUp">
-            <h4>Code Fellows | January 2016 - May 2016</h4>
-            <p>
-              Certificate, Advanced Software Development in Python
-            </p>
-            <div class="space"></div>
-            <h4>University of Washington | September 2010 - December 2015</h4>
-            <p>
-              Bachelors of Arts in Mathematics <br>
-              Double Minor in Applied Mathematics and Diversity <br>
-              Certificate in Quantitative Fundamentals of Computational Finance
-            </p>
+            {% for i in education %}
+              <h4>{{ i.institution }} | {{ i.dates }}</h4>
+              <p>
+                {% if i.institution == 'Code Fellows' %}
+                  Certificate, Advanced Software Development in Python
+                {% else %}
+                  Bachelors of Arts in Mathematics <br>
+                  Double Minor in Applied Mathematics and Diversity <br>
+                  Certificate in Quantitative Fundamentals of Computational Finance
+                {% endif %}
+              </p>
+              <div class="space"></div>
+            {% endfor %}
             <div class="space"></div>
             <h4>Super Powers</h4>
             <div class="list-style">
