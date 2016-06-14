@@ -12,17 +12,19 @@ $(function() {
             var email = $("input#email").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
+            var csrf = $("input#csrfmt")
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "/hireme",
                 type: "POST",
                 data: {
                     name: name,
                     email: email,
-                    message: message
+                    message: message,
+                    csrfmiddlewaretoken: csrf
                 },
                 cache: false,
                 success: function() {

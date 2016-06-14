@@ -95,13 +95,23 @@
 
         <div class="space"></div>
         <div class="row">
+        {% for i in about %}
           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
+            <h4><strong>{{ i.title }}</strong></h4>
+            <p>
+              {{ i.description }}
+            </p>
+          </div>
+        {% endfor %}
+
+
+       <!--    <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
             <h4><strong>Python Compatibility</strong></h4>
             <p>
               I write clean, well-tested, advanced Python code that is compatible in both Python 2 and 3 using industry-standard software engineering patterns.
             </p>
-          </div>
-          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-gears"></i>
+          </div> -->
+<!--           <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-gears"></i>
             <h4><strong>Backend Development</strong></h4>
             <p>
               My passion for programming is deeply rooted in working on the backend of a project; whether it's consuming or creating RESTful API's or constructing a Database from scratch.
@@ -118,7 +128,7 @@
             <p>
               I am experienced and trained in creating web applications that are built with mobile first design in mind. I strive to create sites that are both responsive and user friendly. 
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -220,7 +230,6 @@
         </div>
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">EDUCATION</h2></div>
-          <!-- <div class="space"></div> -->
           <div class="col-md-9 wow fadeInUp">
             <h4>Code Fellows | January 2016 - May 2016</h4>
             <p>
@@ -228,12 +237,13 @@
             </p>
             <div class="space"></div>
             <h4>University of Washington | September 2010 - December 2015</h4>
-            <p>Bachelors of Arts in Mathematics <br>
-               Double Minor in Applied Mathematics and Diversity <br>
-               Certificate in Quantitative Fundamentals of Computational Finance</p>
-            <!-- <div class="wow"> -->
+            <p>
+              Bachelors of Arts in Mathematics <br>
+              Double Minor in Applied Mathematics and Diversity <br>
+              Certificate in Quantitative Fundamentals of Computational Finance
+            </p>
             <div class="space"></div>
-            <h4>Technical Skills</h4>
+            <h4>Super Powers</h4>
             <div class="list-style">
               <div class="row">
                 <div class="col-lg-6 col-sm-6 col-xs-12">
@@ -257,8 +267,6 @@
               </div>
             </div>
           </div>
-<!--      <div class="col-md-3 wow fadeInRight"> January 2016 - May 2016 </div>
-          <div class="col-md-3 wow fadeInRight"> September 2010 - December 2015 </div>-->        
         </div>
       </div>
     </div>
@@ -276,24 +284,30 @@
 
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">WORK</h2></div>
-          <!-- <div class="space"></div> -->
           <div class="col-md-9 wow fadeInUp">
             <h4>Sternshus | May 2016 - Present</h4>
             <h5>Software Engineer Intern</h5>
-            <ul>
-              <li>
-                Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
-              </li>
-              <li>
-                Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
-              </li>
-            </ul>
+            <div class="list-style">
+              <div class="row">
+                <ul>
+                  <li>
+                    • Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
+                  </li>
+                  <li>
+                    • Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div class="space"></div>
             <h4>Code Fellows | May 2016 - June 2016</h4>
             <h5>Teaching Assistant</h5>
             <ul>
               <li>
-                I help learn to code. 
+                • I helped students better understand programming both conceptual and through debugging.
+              </li>
+              <li>
+                • Graded assignments within a 24 hour turn around time.
               </li>
             </ul>
             <!-- <div class="space"></div> -->
@@ -307,12 +321,12 @@
       <div class="container">
         <div class="section-title wow fadeInDown">
           <h2><strong>HIRE</strong> ME!</h2>
+          <p>I need a job.</p>
           <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="200ms">
           <div class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
-            <p><!-- 8833 11th Ave SW<br> -->
+            <p>
               Seattle, WA</p>
           </div>
           <div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
@@ -325,18 +339,18 @@
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="400ms">
           <h3>Leave me a message!</h3>
-          {% csrf_token %}
           <form name="sentMessage" id="contactForm" novalidate>
+            <input id="csrfmt" value="{{ csrf_token }}" type="hidden"></input>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+                  <input type="text" id="name" class="form-control" name="name" placeholder="Name" required="required">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Email" required="required">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -384,7 +398,6 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>SuccessApp</h2>
-                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>
                   A single page web application that utilizes the IndeedJobsAPI and the EventbriteAPI to populate job applications and related corresponding local events that are aligned with the job search. Utilized HandlebarJS for dynamic HTML templating, PagesJS for client-side routing, and Heroku for deployment.
                 </p>
@@ -414,7 +427,6 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>Drone Quest</h2>
-                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>Drone Quest is an open source python module that allows a user to connect their Parrot AR-Drone and fly it using either our Angular web interface or a Leap Motion Controller. Used a Bottle framework to create an API that allows developers to install our module and control their Drone by hitting the correct API endpoints. As well as continuous integration using Tox, TravisCI and pytest.</p>
                 <ul class="list-inline">
                   <li><strong>Install Module</strong>: <a href="https://github.com/DroneQuest"> DroneQuest </a></li>
@@ -442,7 +454,6 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>Equip</h2>
-                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>A web application that helps users create custom packing lists based on selected outdoor activities as well as a journal that allows users to document their trip. Built using vanilla JavaScript, HTML5, and CSS3. Utilized local storage to persistently keep the journal on the users current browser cache.</p>
                 <ul class="list-inline">
                   <li><strong>URL</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
@@ -470,7 +481,6 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>Mars Street View</h2>
-                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>Application that allows the user to navigate along the paths of the Mars rovers, while switching between each rover's multiple cameras. Developed a Postgres database on a Pyramid Framework, using the NASA Mars API to stores hundreds of thousands of photos and information about each photo respectively. Connected the database to front-end interface using JavaScript and jQuery. Successfully implemented pytest for both unit and functional testing as well as Tox to write code that was both Python 2 / Python 3 compatible.</p>
                 <ul class="list-inline">
                   <li><strong>URL</strong>: <a href="http://mars-street-view.herokuapp.com">Mars-Street-View</a> </li>
@@ -498,7 +508,6 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>Portfolio</h2>
-                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
                 <ul class="list-inline">
                   <!-- <li><strong>Client</strong>: John Doe</li> -->

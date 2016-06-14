@@ -19,6 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from portfolio_api.views import AboutAPI, PortfolioAPI, EducationAPI, ExperienceAPI
+from portfolio_app.views import ClassView
+from portfolio_app.views import ContactView
 admin.autodiscover()
 
 urlpatterns = [
@@ -27,7 +29,8 @@ urlpatterns = [
     url(r'^api/education$', EducationAPI.as_view()),
     url(r'^api/experience$', ExperienceAPI.as_view()),
     url(r'^admin/', admin.site.urls),
-    url(r'^', TemplateView.as_view(template_name="portfolio_app/index.html"), name="home"),
+    url(r'^', ClassView.as_view(template_name="portfolio_app/index.html"), name="home"),
+    url(r'^hireme/$', ContactView.as_view()),
 ]
 
 if settings.DEBUG:

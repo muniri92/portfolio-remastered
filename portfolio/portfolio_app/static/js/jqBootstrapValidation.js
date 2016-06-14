@@ -492,7 +492,6 @@
                 }
                 $helpBlock.html($helpBlock.data("original-contents"));
               }
-
               if (e.type === "blur") {
                 $controlGroup.removeClass("success");
               }

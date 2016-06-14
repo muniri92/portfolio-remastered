@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 
 class AboutSerializer(serializers.ModelSerializer):
-	"""Serializer for the About model."""
+    """Serializer for the About model."""
 
     class Meta:
         model = About
@@ -11,7 +11,7 @@ class AboutSerializer(serializers.ModelSerializer):
 
 
 class PortfolioSerializer(serializers.ModelSerializer):
-	"""Serializer for the Portfolio model."""
+    """Serializer for the Portfolio model."""
 
     class Meta:
         model = Portfolio
@@ -19,7 +19,7 @@ class PortfolioSerializer(serializers.ModelSerializer):
 
 
 class EducationSerializer(serializers.ModelSerializer):
-	"""Serializer for the Education model."""
+    """Serializer for the Education model."""
 
     class Meta:
         model = Education
@@ -27,7 +27,7 @@ class EducationSerializer(serializers.ModelSerializer):
 
 
 class ExperienceSerializer(serializers.ModelSerializer):
-	"""Serializer for the Experience model."""
+    """Serializer for the Experience model."""
 
     class Meta:
         model = Experience
