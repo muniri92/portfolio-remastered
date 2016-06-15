@@ -11,6 +11,7 @@ class About(models.Model):
 
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
+    classes = models.CharField(max_length=100)
 
     def __str__(self):
         u"""WTF."""
@@ -25,6 +26,9 @@ class Portfolio(models.Model):
     description = models.CharField(max_length=1000)
     site = models.CharField(max_length=500)
     repo = models.CharField(max_length=500)
+    datafilter = models.CharField(max_length=100)
+    application = models.CharField(max_length=255)
+    display = models.CharField(max_length=30)
 
     def __str__(self):
         u"""WTF."""

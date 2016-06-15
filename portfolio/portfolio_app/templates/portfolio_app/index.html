@@ -96,7 +96,7 @@
         <div class="space"></div>
         <div class="row">
         {% for i in about %}
-          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
+          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa {{ i.classes }}"></i>
             <h4><strong>{{ i.title }}</strong></h4>
             <p>
               {{ i.description }}
@@ -132,61 +132,20 @@
         </div>
         <div class="row">
           <div class="portfolio-items">
-            <div class="col-sm-6 col-md-3 col-lg-3 web">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
-                <div class="hover-bg"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>SuccessApp</h4>
-                    Web Application
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/01.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+          {% for i in portfolio %}
+          <div class="col-sm-6 col-md-3 col-lg-3 {{ i.datafilter }}">
+            <div class="portfolio-item wow fadeInUp" data-wow-delay="{{ i.display }}ms">
+              <div class="hover-bg"> <a href="#portfolioModal{{ i.pk }}" class="portfolio-link" data-toggle="modal">
+                <div class="hover-text">
+                  <h4>{{ i.title }}</h4>
+                  {{ i.applicationl }}
+                  <div class="clearfix"></div>
+                  <i class="fa fa-plus"></i> </div>
+                <img src="static/img/portfolio/0{{ i.pk }}.jpg" class="img-responsive" alt="Project Title"> </a>
               </div>
             </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 app">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="400ms">
-                <div class="hover-bg"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Drone Quest</h4>
-                    Installable Python Module
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/02.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 web">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="600ms">
-                <div class="hover-bg"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Equip</h4>
-                    Web Application
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/03.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 app">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="800ms">
-                <div class="hover-bg"> <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Mars Street View</h4>
-                    Web Application
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/04.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3 branding">
-              <div class="portfolio-item wow fadeInUp" data-wow-delay="1000ms">
-                <div class="hover-bg"> <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                  <div class="hover-text">
-                    <h4>Portfolio</h4>
-                    Branding
-                    <div class="clearfix"></div>
-                    <i class="fa fa-plus"></i> </div>
-                  <img src="{% static 'img/portfolio/05.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
-              </div>
-            </div>
+          </div>
+          {% endfor %}
           </div>
         </div>
       </div>
@@ -261,33 +220,33 @@
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">WORK</h2></div>
           <div class="col-md-9 wow fadeInUp">
-            <h4>Sternshus | May 2016 - Present</h4>
-            <h5>Software Engineer Intern</h5>
+          {% for i in experience %}
+            <h4>{{ i.company }} | {{ i.dates }}</h4>
+            <h5>{{ i.position }}</h5>
             <div class="list-style">
               <div class="row">
                 <ul>
+                  {% if i.company == "Sternshus" %}
                   <li>
                     • Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
                   </li>
                   <li>
                     • Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
                   </li>
+                  {% else %}
+                  <li>
+                    • I helped students better understand programming both conceptual and through debugging.
+                  </li>
+                  <li>
+                    • Graded assignments within a 24 hour turn around time.
+                  </li>
+                  {% endif %}
                 </ul>
+
               </div>
+              <div class="space"></div>
             </div>
-            <div class="space"></div>
-            <h4>Code Fellows | May 2016 - June 2016</h4>
-            <h5>Teaching Assistant</h5>
-            <ul>
-              <li>
-                • I helped students better understand programming both conceptual and through debugging.
-              </li>
-              <li>
-                • Graded assignments within a 24 hour turn around time.
-              </li>
-            </ul>
-            <!-- <div class="space"></div> -->
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div> 
@@ -360,8 +319,10 @@
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
+
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    {% for i in portfolio %}
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ i.pk }}" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
           <div class="lr">
@@ -373,15 +334,21 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2>SuccessApp</h2>
+                <h2>{{ i.title }}</h2>
                 <p>
-                  A single page web application that utilizes the IndeedJobsAPI and the EventbriteAPI to populate job applications and related corresponding local events that are aligned with the job search. Utilized HandlebarJS for dynamic HTML templating, PagesJS for client-side routing, and Heroku for deployment.
+                  {{ i.description }}
                 </p>
                 <ul class="list-inline">
-                  <li><strong>URL</strong>: <a href="http://successapp.herokuapp.com">SuccessApp</a></li>
-                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/successapp"></a>Repo</li>
+                  <li><strong>
+                      {% if i.title == 'Drone Quest' %}
+                        Installable Module
+                      {% else %}
+                        URL
+                      {% endif %}
+                      </strong>: <a href="{{ i.site }}">{{ i.title }}</a></li>
+                  <li><strong>Github</strong>: <a href="{{ i.repo }}">Repo</a></li>
                 </ul>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/01-preview.jpg' %}" alt="">
+                <img class="img-responsive img-centered" src="static/img/portfolio/0{{ i.pk }}-preview.jpg" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
@@ -389,115 +356,7 @@
         </div>
       </div>
     </div>
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Drone Quest</h2>
-                <p>Drone Quest is an open source python module that allows a user to connect their Parrot AR-Drone and fly it using either our Angular web interface or a Leap Motion Controller. Used a Bottle framework to create an API that allows developers to install our module and control their Drone by hitting the correct API endpoints. As well as continuous integration using Tox, TravisCI and pytest.</p>
-                <ul class="list-inline">
-                  <li><strong>Install Module</strong>: <a href="https://github.com/DroneQuest"> DroneQuest </a></li>
-                  <li><strong>Github</strong>: <a href="https://github.com/DroneQuest/drone-quest">Repo</a> </li>
-                </ul>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/02-preview.jpg' %}" alt="">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Equip</h2>
-                <p>A web application that helps users create custom packing lists based on selected outdoor activities as well as a journal that allows users to document their trip. Built using vanilla JavaScript, HTML5, and CSS3. Utilized local storage to persistently keep the journal on the users current browser cache.</p>
-                <ul class="list-inline">
-                  <li><strong>URL</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
-                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/equip">Repo</a> </li>
-                </ul>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/03-preview.jpg' %}" alt="">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Mars Street View</h2>
-                <p>Application that allows the user to navigate along the paths of the Mars rovers, while switching between each rover's multiple cameras. Developed a Postgres database on a Pyramid Framework, using the NASA Mars API to stores hundreds of thousands of photos and information about each photo respectively. Connected the database to front-end interface using JavaScript and jQuery. Successfully implemented pytest for both unit and functional testing as well as Tox to write code that was both Python 2 / Python 3 compatible.</p>
-                <ul class="list-inline">
-                  <li><strong>URL</strong>: <a href="http://mars-street-view.herokuapp.com">Mars-Street-View</a> </li>
-                  <li><strong>Github</strong>: <a href="https://github.com/mars-street-view/mars-street-view">Repo</a> </li>
-                </ul>
-                <img class="img-responsive img-centered" src="{% static 'img/portfolio/04-preview.jpg' %}" alt="">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"> </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2>Portfolio</h2>
-                <p>Lorem ipsum dolor sit amet, sea essent iisque iudicabit te, pro no justo delicata inimicus, et oblique docendi laboramus eum. Ei minim fabulas pertinacia pro, graeco urbanitas reformidans quo id. Error congue tacimates ei vis, facer facete ius cu, audiam prodesset pri ut. Id semper fuisset vel, has dolorum menandri eu.</p>
-                <ul class="list-inline">
-                  <!-- <li><strong>Client</strong>: John Doe</li> -->
-                  <li><strong>Github</strong>: <a href="https://github.com/muniri92/portfolio-remastered">Repo</a> </li>
-                </ul>
-                <img class="img-responsive img-centered" src="img/portfolio/05-preview.jpg" alt="">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    {% endfor %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
