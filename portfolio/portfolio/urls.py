@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from portfolio_api.views import AboutAPI, PortfolioAPI, EducationAPI, ExperienceAPI
+from portfolio_app.views import ClassView
+admin.autodiscover()
 
 urlpatterns = [
+    url(r'^api/about$', AboutAPI.as_view()),
+    url(r'^api/portfolio$', PortfolioAPI.as_view()),
+    url(r'^api/education$', EducationAPI.as_view()),
+    url(r'^api/experience$', ExperienceAPI.as_view()),
     url(r'^admin/', admin.site.urls),
+    url(r'^', ClassView.as_view(template_name="portfolio_app/index.html"), name="home"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
