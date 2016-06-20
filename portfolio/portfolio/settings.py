@@ -29,7 +29,7 @@ DEBUG = False
 
 
 # For future reference
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 # ALLOWED_HOSTS = ['localhost', 'ec2-52-37-133-225.us-west-2.compute.amazonaws.com']
 
 
