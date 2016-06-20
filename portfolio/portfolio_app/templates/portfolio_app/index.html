@@ -113,7 +113,6 @@
       <div class="container"> <!-- Container -->
         <div class="section-title wow fadeInDown">
           <h2><strong>PORTFOLIO</strong></h2>
-          <p>Projects I've Done</p>
           <hr>
           <div class="clearfix"></div>
         </div>
@@ -124,7 +123,7 @@
                 <li><a href="#" data-filter="*" class="active">All</a></li>
                 <li><a href="#" data-filter=".web">Javascript</a></li>
                 <li><a href="#" data-filter=".app">Python</a></li>
-                <li><a href="#" data-filter=".branding">Personal</a></li>
+                <li><a href="#" data-filter=".branding">Branding</a></li>
               </ol>
             </li>
           </ul>
@@ -138,7 +137,7 @@
               <div class="hover-bg"> <a href="#portfolioModal{{ i.pk }}" class="portfolio-link" data-toggle="modal">
                 <div class="hover-text">
                   <h4>{{ i.title }}</h4>
-                  {{ i.applicationl }}
+                  {{ i.application }}
                   <div class="clearfix"></div>
                   <i class="fa fa-plus"></i> </div>
                 <img src="static/img/portfolio/0{{ i.pk }}.jpg" class="img-responsive" alt="Project Title"> </a>
@@ -157,7 +156,6 @@
       <div class="container">
         <div class="section-title text-center wow fadeInDown">
           <h2><strong>CURRICULUM</strong> VITAE</h2>
-          <p>Where was I taught?</pWhere I was taught>
           <hr>
           <div class="clearfix"></div>
         </div>
@@ -212,7 +210,6 @@
       <div class="container">
         <div class="section-title text-center wow fadeInDown">
           <h2><strong>EXPERIENCE</strong></h2>
-          <p>Where I've worked.</p>
           <hr>
           <div class="clearfix"></div>
         </div>
@@ -220,7 +217,7 @@
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">WORK</h2></div>
           <div class="col-md-9 wow fadeInUp">
-          {% for i in experience %}
+            {% for i in experience %}
             <h4>{{ i.company }} | {{ i.dates }}</h4>
             <h5>{{ i.position }}</h5>
             <div class="list-style">
@@ -233,20 +230,29 @@
                   <li>
                     • Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
                   </li>
+                  <li>
+                    • Utilized the Google Cloud Platform to create API, from the pipeline archticture to theimplementation.
+                  </li>
                   {% else %}
                   <li>
-                    • I helped students better understand programming both conceptual and through debugging.
+                    • Assisted in introducing a class of 13 to software development, teaching them HTML(5), CSS(3), and vanilla JavaScript.
                   </li>
                   <li>
-                    • Graded assignments within a 24 hour turn around time.
+                    • Helped students through debugging their code to provide greater understanding with programs they are working with.
+                  </li>
+                  <li>
+                    • Graded students assignments with a 24-hour turn around time to allow for immediate feedback.
+                  </li>
+                  <li>
+                    • Coordinated with instructor and TA team to streamline the curriculum and make certain that relevant tools and methods were taught.
                   </li>
                   {% endif %}
                 </ul>
-
               </div>
               <div class="space"></div>
             </div>
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div> 
@@ -256,8 +262,8 @@
       <div class="container">
         <div class="section-title wow fadeInDown">
           <h2><strong>HIRE</strong> ME!</h2>
-          <p>I need a job.</p>
           <hr>
+          <h3>Feel free to contact me!</h3>
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="200ms">
           <div class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
@@ -268,35 +274,14 @@
             <p>mibrah04@gmail.com</p>
           </div>
           <div class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
-            <p> 206 650 8073</p>
+            <p> 206 693 8073</p>
           </div>
           <div class="clearfix"></div>
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="400ms">
-          <h3>Leave me a message!</h3>
-          <form name="sentMessage" id="contactForm" novalidate>
-            <input id="csrfmt" value="{{ csrf_token }}" type="hidden"></input>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" id="name" class="form-control" name="name" placeholder="Name" required="required">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="email" id="email" class="form-control" name="email" placeholder="Email" required="required">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-              <p class="help-block text-danger"></p>
-            </div>
-            <div id="success"></div>
-            <button type="submit" class="btn btn-default">Send Message</button>
-          </form>
+          <h1>
+            I'm currently looking for a Full Time Software Engineer position. I enjoy working in small agile teams, helping to solve problems in a creative and efficient way and become a key member of a development team.
+          </h1>
           <div class="social">
             <ul>
               <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->

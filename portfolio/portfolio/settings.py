@@ -25,17 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pt&y3and$#g9*b2n&ucog_q#n16bm$@gt54s21kuyr#!2mva*0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# To set up email connect from possible employers
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'michaelmunirkyle@gmail.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_UN')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+DEBUG = False
 
 
 # For future reference
