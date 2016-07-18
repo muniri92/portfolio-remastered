@@ -16,7 +16,8 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css"  href="{% static 'css/bootstrap.css' %}">
+    <!-- <link rel="stylesheet" type="text/css"  href="{% static 'css/bootstrap.css' %}"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
 
     <!-- Slider
@@ -89,20 +90,36 @@
           <hr>
           <div class="clearfix"></div>
           <p>
-            Hey, My name is Munir Ibrahim. I’m a recent graduate of the Python 401 course over at Code Fellows. Before pursing a career in software development I was a student at the University of Washington (Go Huskies!), receiving a degree in Mathematics in 2015. During my undergraduate work, I learned to love programming, so made the switch when I finished. I’ve thus spent the last few months of my life growing and maturing into a well-rounded developer. 
+            Hey, My name is Munir Ibrahim. I’m a recent graduate of the Python 401 course over at Code Fellows. Before pursing a career in software development I was a student at the University of Washington (Go Huskies!), receiving a degree in Mathematics in 2015. During my undergraduate work, I learned to love programming, so made the switch when I finished. I’ve thus spent the last year growing and maturing into a well-rounded developer. 
           </p>
         </div>
 
         <div class="space"></div>
         <div class="row">
-        {% for i in about %}
-          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa {{ i.classes }}"></i>
-            <h4><strong>{{ i.title }}</strong></h4>
+          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
+            <h4><strong>Python Compatibility</strong></h4>
             <p>
-              {{ i.description }}
+              I write clean, well-tested, advanced Python code that is compatible in both Python 2 and 3 using industry-standard software engineering patterns.
             </p>
           </div>
-        {% endfor %}
+          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-gears"></i>
+            <h4><strong>Backend Development</strong></h4>
+            <p>
+              My passion for programming is deeply rooted in working on the backend of a project; whether it's consuming or creating RESTful API's or constructing a Database from scratch.
+            </p>
+          </div>
+          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="800ms"> <i class="fa fa-rocket"></i>
+            <h4><strong>Data Science</strong></h4>
+            <p>
+              I enjoys working with the preprocessing and organization of large sets of data in order to find patterns  that help provide meaningful interpretations and reports.
+            </p>
+          </div>
+          <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="600ms"> <i class="fa fa-bullhorn"></i>
+            <h4><strong>Responsive Design</strong></h4>
+            <p>
+              I am experienced and trained in creating web applications that are built with mobile first design in mind. I strive to create sites that are both responsive and user friendly. 
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -123,7 +140,7 @@
                 <li><a href="#" data-filter="*" class="active">All</a></li>
                 <li><a href="#" data-filter=".web">Javascript</a></li>
                 <li><a href="#" data-filter=".app">Python</a></li>
-                <li><a href="#" data-filter=".branding">Branding</a></li>
+                <!-- <li><a href="#" data-filter=".branding">Personal</a></li> -->
               </ol>
             </li>
           </ul>
@@ -131,20 +148,50 @@
         </div>
         <div class="row">
           <div class="portfolio-items">
-          {% for i in portfolio %}
-          <div class="col-sm-6 col-md-3 col-lg-3 {{ i.datafilter }}">
-            <div class="portfolio-item wow fadeInUp" data-wow-delay="{{ i.display }}ms">
-              <div class="hover-bg"> <a href="#portfolioModal{{ i.pk }}" class="portfolio-link" data-toggle="modal">
-                <div class="hover-text">
-                  <h4>{{ i.title }}</h4>
-                  {{ i.application }}
-                  <div class="clearfix"></div>
-                  <i class="fa fa-plus"></i> </div>
-                <img src="static/img/portfolio/0{{ i.pk }}.jpg" class="img-responsive" alt="Project Title"> </a>
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+              <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
+                <div class="hover-bg"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                  <div class="hover-text">
+                    <h4>SuccessApp</h4>
+                    Web Application
+                    <div class="clearfix"></div>
+                    <i class="fa fa-plus"></i> </div>
+                  <img src="{% static 'img/portfolio/01.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
               </div>
             </div>
-          </div>
-          {% endfor %}
+            <div class="col-sm-6 col-md-3 col-lg-3 app">
+              <div class="portfolio-item wow fadeInUp" data-wow-delay="400ms">
+                <div class="hover-bg"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                  <div class="hover-text">
+                    <h4>Drone Quest</h4>
+                    Installable Python Module
+                    <div class="clearfix"></div>
+                    <i class="fa fa-plus"></i> </div>
+                  <img src="{% static 'img/portfolio/02.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+              <div class="portfolio-item wow fadeInUp" data-wow-delay="600ms">
+                <div class="hover-bg"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                  <div class="hover-text">
+                    <h4>Equip</h4>
+                    Web Application
+                    <div class="clearfix"></div>
+                    <i class="fa fa-plus"></i> </div>
+                  <img src="{% static 'img/portfolio/03.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 app">
+              <div class="portfolio-item wow fadeInUp" data-wow-delay="800ms">
+                <div class="hover-bg"> <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                  <div class="hover-text">
+                    <h4>Mars Street View</h4>
+                    Web Application
+                    <div class="clearfix"></div>
+                    <i class="fa fa-plus"></i> </div>
+                  <img src="{% static 'img/portfolio/04.jpg' %}" class="img-responsive" alt="Project Title"> </a> </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -161,22 +208,20 @@
         </div>
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">EDUCATION</h2></div>
+          <!-- <div class="space"></div> -->
           <div class="col-md-9 wow fadeInUp">
-            {% for i in education %}
-              <h4>{{ i.institution }} | {{ i.dates }}</h4>
-              <p>
-                {% if i.institution == 'Code Fellows' %}
-                  Certificate, Advanced Software Development in Python
-                {% else %}
-                  Bachelors of Arts in Mathematics <br>
-                  Double Minor in Applied Mathematics and Diversity <br>
-                  Certificate in Quantitative Fundamentals of Computational Finance
-                {% endif %}
-              </p>
-              <div class="space"></div>
-            {% endfor %}
+            <h4>Code Fellows | January 2016 - May 2016</h4>
+            <p>
+              Certificate, Advanced Software Development in Python
+            </p>
             <div class="space"></div>
-            <h4>Super Powers</h4>
+            <h4>University of Washington | September 2010 - December 2015</h4>
+            <p>Bachelors of Arts in Mathematics <br>
+               Double Minor in Applied Mathematics and Diversity <br>
+               Certificate in Quantitative Fundamentals of Computational Finance</p>
+            <!-- <div class="wow"> -->
+            <div class="space"></div>
+            <h4>Technical Skills</h4>
             <div class="list-style">
               <div class="row">
                 <div class="col-lg-6 col-sm-6 col-xs-12">
@@ -200,6 +245,8 @@
               </div>
             </div>
           </div>
+<!--      <div class="col-md-3 wow fadeInRight"> January 2016 - May 2016 </div>
+          <div class="col-md-3 wow fadeInRight"> September 2010 - December 2015 </div>-->        
         </div>
       </div>
     </div>
@@ -216,42 +263,53 @@
 
         <div class="row">
           <div class="col-md-3 wow fadeInLeft"> <h2 class="edu-title">WORK</h2></div>
+          <!-- <div class="space"></div> -->
           <div class="col-md-9 wow fadeInUp">
-            {% for i in experience %}
-            <h4>{{ i.company }} | {{ i.dates }}</h4>
-            <h5>{{ i.position }}</h5>
-            <div class="list-style">
-              <div class="row">
-                <ul>
-                  {% if i.company == "Sternshus" %}
-                  <li>
-                    • Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
-                  </li>
-                  <li>
-                    • Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
-                  </li>
-                  <li>
-                    • Utilized the Google Cloud Platform to create API, from the pipeline archticture to theimplementation.
-                  </li>
-                  {% else %}
-                  <li>
-                    • Assisted in introducing a class of 13 to software development, teaching them HTML(5), CSS(3), and vanilla JavaScript.
-                  </li>
-                  <li>
-                    • Helped students through debugging their code to provide greater understanding with programs they are working with.
-                  </li>
-                  <li>
-                    • Graded students assignments with a 24-hour turn around time to allow for immediate feedback.
-                  </li>
-                  <li>
-                    • Coordinated with instructor and TA team to streamline the curriculum and make certain that relevant tools and methods were taught.
-                  </li>
-                  {% endif %}
-                </ul>
-              </div>
-              <div class="space"></div>
-            </div>
-            {% endfor %}
+
+            <h4>Code Fellows | July 2016 - Present</h4>
+            <h5>Lead Teaching Assistant</h5>
+            <ul>
+              <li>
+                • Lead TA team by ensuring common practices and procedures are in place and followed.
+              </li>
+              <li>
+                • Work with instructor to streamline curriculum and ensure that relevant tools and methods are taught.
+              </li>
+              <li>
+                • Review and grade assignments, providing feedback and critique to ensure a deep understanding of materials.
+              </li>
+              <li>
+                • Assist in introducing a class of 14 to software development, teaching them HTML(5), CSS(3), and vanilla JavaScript.
+              </li>
+            </ul>
+            <div class="space"></div>
+
+            <h4>Sternshus | May 2016 - July 2016</h4>
+            <h5>Software Engineer Intern</h5>
+            <ul>
+              <li>
+                • Sternshus is a start-up that has created a platform to algorithmically tags, indexes, and ranks financial data. 
+              </li>
+              <li>
+                • Developed the landing-page from the ground up using a Django framework; worked heavily on the user-interface of the site.
+              </li>
+            </ul>
+            <div class="space"></div>
+
+            <h4>Code Fellows | May 2016 - June 2016</h4>
+            <h5>Teaching Assistant</h5>
+            <ul>
+              <li>
+                • Assisted in introducing a class of 13 to software development, teaching them HTML(5), CSS(3), and vanilla JavaScript.
+              </li>
+              <li>
+                • Helped students through debugging their code to provide greater understanding with programs they are working with.
+              </li>
+              <li>
+                • Coordinated with instructor and TA team to streamline the curriculum and make certain that relevant tools and methods were taught.
+              </li>
+            </ul>
+            <!-- <div class="space"></div> -->
           </div>
         </div>
       </div>
@@ -280,7 +338,7 @@
         </div>
         <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="400ms">
           <h1>
-            I'm currently looking for a Full Time Software Engineer position. I enjoy working in small agile development teams, helping to solve problems in a creative and efficient way.
+            I'm currently looking for a full-time Software Engineer position. I enjoy working in small agile development teams, helping to solve problems in a creative and efficient way.
           </h1>
           <div class="social">
             <ul>
@@ -304,10 +362,8 @@
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
-
     <!-- Portfolio Modal 1 -->
-    {% for i in portfolio %}
-    <div class="portfolio-modal modal fade" id="portfolioModal{{ i.pk }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
           <div class="lr">
@@ -319,21 +375,16 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2>{{ i.title }}</h2>
+                <h2>SuccessApp</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
                 <p>
-                  {{ i.description }}
+                  A single page web application that utilizes the IndeedJobsAPI and the EventbriteAPI to populate job applications and related corresponding local events that are aligned with the job search. Utilized HandlebarJS for dynamic HTML templating, PagesJS for client-side routing, and Heroku for deployment.
                 </p>
                 <ul class="list-inline">
-                  <li><strong>
-                      {% if i.title == 'Drone Quest' %}
-                        Installable Module
-                      {% else %}
-                        URL
-                      {% endif %}
-                      </strong>: <a href="{{ i.site }}">{{ i.title }}</a></li>
-                  <li><strong>Github</strong>: <a href="{{ i.repo }}">Repo</a></li>
+                  <li><strong>URL</strong>: <a href="http://successapp.herokuapp.com">SuccessApp</a></li>
+                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/successapp"></a>Repo</li>
                 </ul>
-                <img class="img-responsive img-centered" src="static/img/portfolio/0{{ i.pk }}-preview.jpg" alt="">
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/01-preview.jpg' %}" alt="">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
               </div>
             </div>
@@ -341,14 +392,99 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"> </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2>Drone Quest</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
+                <p>Drone Quest is an open source python module that allows a user to connect their Parrot AR-Drone and fly it using either our Angular web interface or a Leap Motion Controller. Used a Bottle framework to create an API that allows developers to install our module and control their Drone by hitting the correct API endpoints. As well as continuous integration using Tox, TravisCI and pytest.</p>
+                <ul class="list-inline">
+                  <li><strong>Install Module</strong>: <a href="https://github.com/DroneQuest"> DroneQuest </a></li>
+                  <li><strong>Github</strong>: <a href="https://github.com/DroneQuest/drone-quest">Repo</a> </li>
+                </ul>
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/02-preview.jpg' %}" alt="">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"> </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2>Equip</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
+                <p>A web application that helps users create custom packing lists based on selected outdoor activities as well as a journal that allows users to document their trip. Built using vanilla JavaScript, HTML5, and CSS3. Utilized local storage to persistently keep the journal on the users current browser cache.</p>
+                <ul class="list-inline">
+                  <li><strong>URL</strong>: <a href="http://heyduckd.github.io/equip/">Equip</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/heyduckd/equip">Repo</a> </li>
+                </ul>
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/03-preview.jpg' %}" alt="">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"> </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2>Mars Street View</h2>
+                <!-- <p class="item-intro">Lorem ipsum dolor sit amet consectetur.</p> -->
+                <p>Application that allows the user to navigate along the paths of the Mars rovers, while switching between each rover's multiple cameras. Developed a Postgres database on a Pyramid Framework, using the NASA Mars API to stores hundreds of thousands of photos and information about each photo respectively. Connected the database to front-end interface using JavaScript and jQuery. Successfully implemented pytest for both unit and functional testing as well as Tox to write code that was both Python 2 / Python 3 compatible.</p>
+                <ul class="list-inline">
+                  <li><strong>URL</strong>: <a href="http://mars-street-view.herokuapp.com">Mars-Street-View</a> </li>
+                  <li><strong>Github</strong>: <a href="https://github.com/mars-street-view/mars-street-view">Repo</a> </li>
+                </ul>
+                <img class="img-responsive img-centered" src="{% static 'img/portfolio/04-preview.jpg' %}" alt="">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="{% static 'js/jquery.1.11.1.js' %}"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
