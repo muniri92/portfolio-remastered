@@ -241,12 +241,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#032731', end
 #works-section hr {
 	background: #a9971c;
 }
+ul.cat{
+	padding: 0px;
+}
 ul.cat li {
 	display: inline-block;
 }
+ol.type{
+	padding: 0px;
+}
 ol.type li {
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 16px;
 }
 ol.type li a {
 	color: #51633d;
