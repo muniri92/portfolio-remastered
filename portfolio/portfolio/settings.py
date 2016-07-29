@@ -96,16 +96,16 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 #     default=os.environ.get('PORTFOLIO_DATABASE_URL'))
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'portfolio',
-        'USER': os.environ.get('USER', 'MunirIbrahim'),
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'portfolio',
+#         'USER': os.environ.get('USER', 'MunirIbrahim'),
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
